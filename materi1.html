@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+import React, { useState } from 'react';
+//tanpa react
+// rootElement.setAttribute("id", "root2")
+// const element = document.createElement("div")
+// element.textContent = "Hello world"
+// element.className = "container2"
+// rootElement.append(element)
+
+//dengan react
+// const element = React.createElement( "div", //mbuat div
+//     {className: "container2", //properti dari div
+//     children: [
+//     , React.createElement("span", {
+//         children: "Hellow "})
+//     ,"",
+//     , React.createElement("span", {
+//         children: "World"})
+//         ]
+//     })// isi div
+
+//dengan Babel
+      // const element = (
+      //   <div>
+      //     <span>Hello world</span>
+      //   </div>
+      // );
+
+      //BELAJAR PROPS
+      // function Message(props) {
+      //   return(
+      //     <div className="message">
+      //       <p>Tulisan ini gak berubah: MUKTI</p>
+      //       <p>namun ini berubah karena beda props :</p>
+      //       {props.greetings} {props.subject}
+      //     </div>
+      //   )
+      // }
+      // const element = (
+        <div className="container">
+        <Message 
+        greetings={"test greetings"} 
+        subject={"Dunia"}
+        />
+        <p>'</p>
+        <Message 
+        greetings={"WOWOWO"} 
+        subject={"WIWIWI"}
+        />
+        </div>
+      );
+
+      //INCRECEMENT DECRECEMENT
+      function App() {
+        let [number, setNumber] = useState(0)
+        return(
+          <div>
+            <button onClick={() => {
+              setNumber(number + 1)
+            }}>+</button>
+
+            <button onClick={() => {
+              setNumber(number - 1)
+            }}>-</button>
+          </div>
+        )
+      }
+      
+      ReactDOM.render(element, document.getElementById('root'));
+    </script>
+  </body>
+</html>
+
+
